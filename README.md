@@ -7,7 +7,7 @@ This guide details how to install the Goodix fingerprint sensor driver (ID 27c6:
 To install the drivers and enroll your fingerprint, run the following command in your terminal:
 
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/main/setup.sh)
+sudo bash <(wget -qO- https://raw.githubusercontent.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/main/setup.sh)
 ```
 
 ### 1\. Check Your Device ID
