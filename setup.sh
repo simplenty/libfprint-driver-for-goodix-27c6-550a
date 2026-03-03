@@ -38,7 +38,7 @@ sudo apt install -f -y
 sudo apt install -y fprintd libpam-fprintd
 
 echo ""
-echo "-------------------------------------------------------"
+echo "-------------------------------------------------------"it
 echo "!!! ACTION REQUIRED: PAM CONFIGURATION !!!"
 echo "1. Use ARROW KEYS to navigate to 'Fingerprint authentication'."
 echo "2. Press SPACE to ensure there is an [*] next to it."
@@ -56,7 +56,7 @@ read -n 1 -s -r -p "Configuration finished. Press any key to start Fingerprint E
 echo ""
 echo ""
 echo "-------------------------------------------------------"
-echo "  FINGERPRINT ENROLLMENT"
+echo "  FINGERPRINT ENROLLMENT"
 echo "-------------------------------------------------------"
 echo "User: $USER_TO_ENROLL"
 echo "Touch your RIGHT INDEX finger (or preferred finger)"
