@@ -6,7 +6,6 @@ LINK1="https://github.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/re
 LINK2="https://github.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/releases/download/v1/libfprint-2-2_1.94.9+tod1-1_amd64.deb"
 LINK3="https://github.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/releases/download/v1/libfprint-2-tod-goodix_amd64.deb"
 
-
 TEMP_DIR="goodix_install_temp"
 USER_TO_ENROLL="${SUDO_USER:-$USER}"
 
@@ -28,7 +27,6 @@ wget -L -O lib2.deb "$LINK2"
 wget -L -O lib3.deb "$LINK3"
 
 echo "[3/5] Installing specific driver versions via dpkg..."
-# Using || true ensures the script keeps moving to the 'apt install -f' fix
 sudo dpkg -i lib1.deb || true
 sudo dpkg -i lib2.deb || true
 sudo dpkg -i lib3.deb || true
@@ -39,18 +37,17 @@ sudo apt install -y fprintd libpam-fprintd
 
 clear
 
-echo "-------------------------------------------------------"it
+echo "-------------------------------------------------------"
 echo "!!! ACTION REQUIRED: PAM CONFIGURATION !!!"
 echo "1. Use ARROW KEYS to navigate to 'Fingerprint authentication'."
 echo "2. Press SPACE to ensure there is an [*] next to it."
 echo "3. Press TAB to highlight <Ok>, then press ENTER."
 echo "-------------------------------------------------------"
-read -n 1 -s -r -p "Press any key to open the configuration screen..."
-sudo pam-auth-update     
+read -n 1 -s -r -p "Press any key to open the configuration screen..." < /dev/tty
+sudo pam-auth-update      
 echo ""
 echo "PAM configuration saved."
-read -n 1 -s -r -p "Configuration finished. Press any key to start Fingerprint Enrollment..."
-echo ""
+read -n 1 -s -r -p "Configuration finished. Press any key to start Fingerprint Enrollment..." < /dev/tty
 echo ""
 echo "-------------------------------------------------------"
 echo "  FINGERPRINT ENROLLMENT"
