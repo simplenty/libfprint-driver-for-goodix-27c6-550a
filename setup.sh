@@ -38,14 +38,22 @@ sudo apt install -f -y
 sudo apt install -y fprintd libpam-fprintd
 
 echo ""
-echo "!!! ACTION REQUIRED !!!"
-echo "In the next screen:"
-echo "- Use SPACE to ensure [*] Fingerprint authentication is enabled."
-echo "- TAB to <Ok>, then ENTER."
 echo "-------------------------------------------------------"
-read -r -p "Press Enter to open PAM configuration... "
+echo "!!! ACTION REQUIRED: PAM CONFIGURATION !!!"
+echo "1. Use ARROW KEYS to navigate to 'Fingerprint authentication'."
+echo "2. Press SPACE to ensure there is an [*] next to it."
+echo "3. Press TAB to highlight <Ok>, then press ENTER."
+echo "-------------------------------------------------------"
+read -n 1 -s -r -p "Press any key to open the configuration screen..."
+echo ""
+
+# Launching PAM config
 sudo pam-auth-update
 
+echo ""
+echo "PAM configuration saved."
+read -n 1 -s -r -p "Configuration finished. Press any key to start Fingerprint Enrollment..."
+echo ""
 echo ""
 echo "-------------------------------------------------------"
 echo "  FINGERPRINT ENROLLMENT"
