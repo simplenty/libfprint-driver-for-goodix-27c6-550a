@@ -46,9 +46,7 @@ echo "2. Press SPACE to ensure there is an [*] next to it."
 echo "3. Press TAB to highlight <Ok>, then press ENTER."
 echo "-------------------------------------------------------"
 read -n 1 -s -r -p "Press any key to open the configuration screen..."
-# Launching PAM config
-sudo pam-auth-update
-
+sudo pam-auth-update     
 echo ""
 echo "PAM configuration saved."
 read -n 1 -s -r -p "Configuration finished. Press any key to start Fingerprint Enrollment..."
