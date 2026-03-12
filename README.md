@@ -2,6 +2,14 @@
 
 This guide details how to install the Goodix fingerprint sensor driver (ID 27c6:550a) on **Debian 13 (Trixie)**, a common component found in many Dell and Lenovo laptops. Since this sensor is not supported by the standard `libfprint` package, we'll use a specific driver package provided by Lenovo, along with its required dependencies from Ubuntu's Launchpad.
 
+## Quick Installation
+
+To install the drivers and enroll your fingerprint, run the following command in your terminal:
+
+```bash
+sudo bash <(wget -qO- https://raw.githubusercontent.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/main/setup.sh)
+```
+
 ### 1\. Check Your Device ID
 
 Before you begin, verify that your fingerprint sensor's device ID matches the one this guide addresses. Open your terminal and run the `lsusb` command.
