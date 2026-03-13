@@ -10,14 +10,14 @@ fi
 # 2. Sudo Check
 if [[ $EUID -ne 0 ]]; then
    echo "Error: Please run this script with sudo."
-   echo "Example: sudo bash <(wget -qO- https://raw.githubusercontent.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/main/setup.sh)"
+   echo "Example: sudo bash <(wget -qO- https://raw.githubusercontent.com/simplenty/libfprint-driver-for-goodix-27c6-550a/main/setup.sh)"
    exit 1
 fi
 
 # Define Exact Direct Links from your Repo
-LINK1="https://github.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/releases/download/v1/libfprint-2-tod1_1.94.7+tod1-0ubuntu5.24.04.4_amd64.deb"
-LINK2="https://github.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/releases/download/v1/libfprint-2-2_1.94.9+tod1-1_amd64.deb"
-LINK3="https://github.com/Lakshit-Gupta/libfprint-driver-for-goodix-27c6-550a/releases/download/v1/libfprint-2-tod-goodix_amd64.deb"
+LINK1="https://github.com/simplenty/libfprint-driver-for-goodix-27c6-550a/releases/download/0.0.1/libfprint-2-tod1_1.94.7+tod1-0ubuntu5.24.04.4_amd64.deb"
+LINK2="https://github.com/simplenty/libfprint-driver-for-goodix-27c6-550a/releases/download/0.0.1/libfprint-2-2_1.94.9+tod1-1_amd64.deb"
+LINK3="https://github.com/simplenty/libfprint-driver-for-goodix-27c6-550a/releases/download/0.0.1/libfprint-2-tod-goodix_amd64.deb"
 
 TEMP_DIR="goodix_install_temp"
 USER_TO_ENROLL="${SUDO_USER:-$USER}"
@@ -29,7 +29,7 @@ echo "-------------------------------------------------------"
 echo "[1/5] Updating package lists..."
 sudo apt update
 
-echo "[2/5] Fetching driver files from Lakshit-Gupta repository..."
+echo "[2/5] Fetching driver files from simplenty repository..."
 rm -rf "$TEMP_DIR"
 mkdir -p "$TEMP_DIR"
 cd "$TEMP_DIR"
