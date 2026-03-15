@@ -10,7 +10,13 @@ To install the drivers and enroll your fingerprint, run the following command in
 wget -qO /tmp/setup.sh https://raw.githubusercontent.com/simplenty/libfprint-driver-for-goodix-27c6-550a/main/setup.sh && sudo bash /tmp/setup.sh && rm /tmp/setup.sh
 ```
 
-Credits: Quick setup script by [Lakshit-Gupta](https://github.com/Lakshit-Gupta).
+If the installation is interrupted (e.g., Ctrl+C) or fails, run this command to clean up and repair your package manager:
+
+```bash
+sudo rm -rf /tmp/setup.sh ./goodix_install_temp; sudo dpkg --configure -a; sudo apt install -f -y
+```
+
+**Credits:** Quick setup script by [Lakshit-Gupta](https://github.com/Lakshit-Gupta).
 
 ### 1\. Check Your Device ID
 
